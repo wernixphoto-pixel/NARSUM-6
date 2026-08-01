@@ -1,0 +1,102 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:transparent;
+    font-family:"Segoe UI",Arial,sans-serif;
+}
+
+.lower-third{
+    position:absolute;
+    left:60px;
+    bottom:70px;
+    display:flex;
+    align-items:center;
+
+    opacity:0;
+    transform:translateX(-80px);
+    will-change:transform, opacity;
+}
+
+/* Ditambahkan oleh JavaScript */
+.lower-third.show{
+    animation:showHide 30s forwards;
+}
+
+/* LOGO */
+
+.logo{
+    width:82px;
+    height:82px;
+    object-fit:contain;
+    margin-right:20px;
+    filter:drop-shadow(0 0 8px rgba(0,0,0,.5));
+}
+
+.bar{
+    width:8px;
+    height:95px;
+    background:linear-gradient(#fff,#cfcfcf);
+    border-radius:20px;
+    box-shadow:0 0 15px rgba(255,255,255,.6);
+    margin-right:22px;
+}
+
+.content{
+    position:relative;
+    display:inline-block;
+    overflow:hidden;
+    padding-right:20px;
+}
+
+.name{
+    font-size:46px;
+    font-weight:700;
+    color:#fff;
+    line-height:1.05;
+    text-shadow:
+        0 0 4px #000,
+        0 0 12px rgba(255,255,255,.35);
+}
+
+.position{
+    margin-top:2px;          /* sebelumnya 8px */
+    font-size:22px;
+    line-height:1;
+    letter-spacing:5px;
+    color:rgba(255,255,255,.9);
+    text-shadow:0 0 4px #000;
+}
+
+/* Animasi tampil 30 detik */
+
+@keyframes showHide{
+
+    0%{
+        opacity:0;
+        transform:translateX(-80px);
+    }
+
+    4%{
+        opacity:1;
+        transform:translateX(0);
+    }
+
+    90%{
+        opacity:1;
+        transform:translateX(0);
+    }
+
+    100%{
+        opacity:0;
+        transform:translateX(-80px);
+    }
+
+}
